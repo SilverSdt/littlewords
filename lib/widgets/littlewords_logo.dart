@@ -5,9 +5,16 @@ class LittlewordsLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CircleAvatar(
-      backgroundImage: AssetImage('assets/images/logo.png'),
-      radius: 100,
+    return Container(
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        shape: BoxShape.circle,
+        boxShadow: [BoxShadow(blurRadius: 2, color: Colors.black, spreadRadius: 1, offset: Offset(3, 4))],
+      ),
+      child: const CircleAvatar(
+        radius: 100,
+        backgroundImage: AssetImage('assets/images/logo.png'),
+      ),
     );
   }
 }
