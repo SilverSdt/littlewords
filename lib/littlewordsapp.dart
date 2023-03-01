@@ -5,7 +5,7 @@ import 'route/error/error.route.dart';
 import 'route/home/home.route.dart';
 import 'route/loading/loading.route.dart';
 import 'route/login/login.route.dart';
-import 'provider/username.provider.dart';
+import 'providers/username.provider.dart';
 
 
 class LittleWordsApp extends StatelessWidget {

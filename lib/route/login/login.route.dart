@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:littlewords/provider/username.provider.dart';
+import 'package:littlewords/providers/username.provider.dart';
 import 'package:littlewords/widgets/littlewords_logo.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
