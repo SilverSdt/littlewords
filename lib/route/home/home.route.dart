@@ -13,14 +13,23 @@ class _HomeRouteState extends State<HomeRoute> {
 
   @override
   Widget build(BuildContext context){
+
+
     final bodies = <Widget>[
       const _Page0(),
       const _Page1()
     ];
 
     return Scaffold(
+      body: bodies[bottomNavigationBarIndex],
       bottomNavigationBar: BottomNavigationBar(
+
         currentIndex: bottomNavigationBarIndex,
+        onTap: (int index){
+          setState(() {
+            bottomNavigationBarIndex = index;
+          });
+        },
         showSelectedLabels: false,
         showUnselectedLabels: false,
         items: const [
@@ -32,7 +41,6 @@ class _HomeRouteState extends State<HomeRoute> {
               label: 'B')
         ],
       ),
-
     );
   }
 }
@@ -42,7 +50,9 @@ class _Page0 extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
-    return const Placeholder();
+    return const Center(
+      child: Text("Page 0"),
+    );
   }
 }
 
@@ -51,6 +61,8 @@ class _Page1 extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
-    return const Placeholder();
+    return const Center(
+      child: Text("Page 1"),
+    );
   }
 }
