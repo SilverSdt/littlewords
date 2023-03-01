@@ -1,8 +1,18 @@
-class  extends StatelessWidget {
-  const ({Key? key}) : super(key: key);
+import 'package:flutter/material.dart';
+
+class LittlewordsLogo extends StatelessWidget {
+  const LittlewordsLogo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      width: 128,
+      height: 128,
+      decoration: BoxDecoration(
+        color: Colors.tealAccent,
+        shape: BoxShape.circle,
+        border: Border.all(color: Colors.black, width: 8)
+      ),
+    );
   }
 }
