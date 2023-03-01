@@ -11,6 +11,7 @@ class HomeRoute extends StatefulWidget{
 class _HomeRouteState extends State<HomeRoute> {
   int bottomNavigationBarIndex = 0;
 
+
   @override
   Widget build(BuildContext context){
 
@@ -18,6 +19,14 @@ class _HomeRouteState extends State<HomeRoute> {
     final bodies = <Widget>[
       const _Page0(),
       const _Page1()
+    ];
+
+    final floating = <Widget>[
+      FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () {  },
+      ),
+      Container()
     ];
 
     return Scaffold(
@@ -41,6 +50,11 @@ class _HomeRouteState extends State<HomeRoute> {
               label: 'B')
         ],
       ),
+    floatingActionButton: Consumer(
+      builder: (context, ref, child){
+        return floating[bottomNavigationBarIndex];
+      },
+    )
     );
   }
 }
@@ -50,8 +64,12 @@ class _Page0 extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
-    return const Center(
-      child: Text("Page 0"),
+    return Stack(
+      children: <Widget> [
+        const Center(
+            child: Text("Page 0"),
+        ),
+      ]
     );
   }
 }
