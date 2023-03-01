@@ -43,10 +43,10 @@ class _HomeRouteState extends State<HomeRoute> {
         showUnselectedLabels: false,
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.safety_check),
+              icon: Icon(Icons.circle),
               label: 'A'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.dangerous),
+              icon: Icon(Icons.circle),
               label: 'B')
         ],
       ),
