@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'route/error/error.route.dart';
+import 'route/home/home.route.dart';
+import 'route/loading/loading.route.dart';
+import 'route/login/login.route.dart';
+import 'provider/username.provider.dart';
+
 
 class LittleWordsApp extends StatelessWidget {
   const LittleWordsApp({Key? key}): super(key: key);
@@ -13,7 +19,7 @@ class LittleWordsApp extends StatelessWidget {
         home: _Routing(),
       ),
 
-    )
+    );
   }
 }
 
@@ -22,21 +28,21 @@ class _Routing extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return ref.watch(username.provider).when(data: _whenData, error: _whenError, loading: _whenLoading);
+    return ref.watch(usernameProvider).when(data: _whenData, error: _whenError, loading: _whenLoading);
   }
 }
 
 Widget _whenData(String? username){
-  if (null==username)(String? username){
-    return LoginRoute();
+  if (null == username){
+    return const LoginRoute();
   }
-  return HomeRoute();
+  return const HomeRoute();
 }
 
-Widget _whenError(String? username){
-  return ErrorRoute();
+Widget _whenError(obj, stack){
+  return const ErrorRoute();
 }
 
-Widget _whenLoading{
-  return LoadindRoute();
+Widget _whenLoading(){
+  return const LoadingRoute();
 }
