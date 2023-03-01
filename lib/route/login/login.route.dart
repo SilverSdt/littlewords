@@ -6,8 +6,23 @@ class LoginRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: LittlewordsLogo()),
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const [
+          Spacer(),
+          LittlewordsLogo(),
+          Spacer(),
+          TextField(
+            decoration: InputDecoration(
+              filled: true
+            ),
+          ),
+          ElevatedButton(
+              onPressed: null,
+              child: Text("Enregistrer nom")
+          )
+        ]),
     );
   }
 }
