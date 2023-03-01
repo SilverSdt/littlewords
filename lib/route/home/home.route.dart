@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../widgets/wordCard.dart';
 
 class HomeRoute extends StatefulWidget{
   const HomeRoute({Key? key}): super(key: key);
@@ -64,13 +65,8 @@ class _Page0 extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
-    return Stack(
-      children: <Widget> [
-        const Center(
-            child: Text("Page 0"),
-        ),
-      ]
-    );
+    return const Center(
+        child: WordCard());
   }
 }
 
