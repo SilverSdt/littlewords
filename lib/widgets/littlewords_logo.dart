@@ -9,7 +9,7 @@ class LittlewordsLogo extends StatelessWidget {
       decoration: const BoxDecoration(
         color: Colors.white,
         shape: BoxShape.circle,
-        boxShadow: [BoxShadow(blurRadius: 2, color: Colors.black, spreadRadius: 1, offset: Offset(3, 4))],
+        boxShadow: [BoxShadow(blurRadius: 4, color: Colors.grey, spreadRadius: 4, offset: Offset(4, 6))],
       ),
       child: const CircleAvatar(
         radius: 100,

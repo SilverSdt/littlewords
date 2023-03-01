@@ -12,16 +12,21 @@ class LoginRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       body:
           Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         const Spacer(),
         const LittlewordsLogo(),
         const Spacer(),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           child: TextField(
             controller: _txtController,
-            decoration: InputDecoration(filled: true),
+            decoration: InputDecoration(
+                filled: true,
+              fillColor: Colors.grey[400],
+              labelText: "Pseudonyme"
+            ),
           ),
         ),
 
@@ -50,8 +55,9 @@ class SaveUsernameButton extends ConsumerWidget {
       onPressed: () => {_onPressed(ref)},
       style: ElevatedButton.styleFrom(
         minimumSize: const Size.fromHeight(48),
+        backgroundColor: Colors.indigo
       ),
-      child: const Text("Enregistrer nom"),
+      child: const Text("Enregistrer"),
     );
   }
 
