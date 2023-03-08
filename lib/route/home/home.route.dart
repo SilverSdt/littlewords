@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:littlewords/beans/dto/word.dto.dart';
+import 'package:littlewords/db/db.helper.dart';
+import 'package:littlewords/route/home/Page1.dart';
 import '../../widgets/wordCard.dart';
+
 
 class HomeRoute extends StatefulWidget{
   const HomeRoute({Key? key}): super(key: key);
@@ -19,13 +23,15 @@ class _HomeRouteState extends State<HomeRoute> {
 
     final bodies = <Widget>[
       const _Page0(),
-      const _Page1()
+      const Page1(),
     ];
 
     final floating = <Widget>[
       FloatingActionButton(
         child: const Icon(Icons.add),
-        onPressed: () {  },
+        onPressed: () {
+          DbHelper.insert(WordDTO(null, 'Silver', 'Lorem Ipsum', 1, 1));
+        },
       ),
       Container()
     ];
@@ -65,18 +71,8 @@ class _Page0 extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
-    return const Center(
-        child: WordCard());
+    return Placeholder();
   }
 }
 
-class _Page1 extends StatelessWidget{
-  const _Page1({Key? key}) : super (key: key);
 
-  @override
-  Widget build(BuildContext context){
-    return const Center(
-      child: Text("Page 1"),
-    );
-  }
-}

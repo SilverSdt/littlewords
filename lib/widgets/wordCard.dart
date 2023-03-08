@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:littlewords/beans/dto/word.dto.dart';
 
 class WordCard extends StatelessWidget {
-  const WordCard({Key? key}) : super(key: key);
+  const WordCard({Key? key, required this.word}) : super(key: key);
 
+  final WordDTO word;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,12 +23,12 @@ class WordCard extends StatelessWidget {
             children:[
               Row(
                 children: [
-                  Text('Toto'),
+                  Text(word.author!),
                   Spacer(),
-                  Text('#123')
+                  Text(word.uid.toString())
                 ],
               ),
-              const Text('Petit mot que j\' ai récupéré sur la map')
+               Text(word.content!)
             ],
           ),
         ),
