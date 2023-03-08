@@ -14,13 +14,13 @@ class Page1 extends StatelessWidget{
         builder: (context, snapshot){
 
           if (!snapshot.hasData){
-            return const CircularProgressIndicator();
+            return const Center(child: CircularProgressIndicator());
           }
 
           final List<WordDTO>? data = snapshot.data;
 
           if (data == null || data.isEmpty){
-            return const Text("Aucun mot ramassé");
+            return const Center(child: Text("Aucun mot ramassé"));
           }
 
           return ListView.builder(
