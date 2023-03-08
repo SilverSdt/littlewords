@@ -18,15 +18,19 @@ class DbHelper{
   static const String tableName = "words";
 
   static const String createTable = '''
-  CREATE TABLE IF NOT EXISTS $tableName (
-    vid INTEGER PRIMARY KEY NOT NULL,
-    username VARCHAR NOT NULL
-  )
+    CREATE TABLE IF NOT EXISTS $tableName (
+      uid INTEGER PRIMARY KEY NOT NULL,
+      author VARCHAR NOT NULL,
+      content VARCHAR NOT NULL,
+      latitude REAL NOT NULL,
+      longitude REAL NOT NULL 
+    )
   ''';
 
   static const String dropTable = '''
-   DROP TABLE IF EXISTS $tableName
+    DROP TABLE IF EXISTS $tableName
   ''';
+
 
   static  _onCreate(Database db, int version) {
     db.execute(createTable);
@@ -38,15 +42,23 @@ class DbHelper{
     _onCreate(db, newVersion);
   }
 
-  Future<List<WordDTO>> findAll() async{
+  /// Inserer une ligne dans la table
+  static void insert(WordDTO word){
+    final Map<String, dynamic> wordAsMap = word.toJson();
+    _db!.insert(tableName, wordAsMap);
+  }
+
+  /// Récupérer toutes les lignes de la table
+  static Future<List<WordDTO>> findAll() async {
     final List<Map<String, Object?>> resultSet = await _db!.query(tableName);
     if(resultSet.isEmpty){
       return [];
     }
 
+    // convertir chaque ligne du ResultSet en WordDTO
     final List<WordDTO> words = [];
-    for (var map in resultSet){
-      var wordDTO = WordDTO.fromJson(map);
+    for (var rs in resultSet) {
+      var wordDTO = WordDTO.fromJson(rs);
       words.add(wordDTO);
     }
 

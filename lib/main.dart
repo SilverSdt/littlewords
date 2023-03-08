@@ -4,6 +4,7 @@ import 'package:littlewords/db/db.helper.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  DbHelper.initDb();
 
   runApp(const LittleWordsApp());
 }
