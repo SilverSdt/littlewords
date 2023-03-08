@@ -4,6 +4,7 @@ import 'package:littlewords/beans/dto/word.dto.dart';
 import 'package:littlewords/db/db.helper.dart';
 import 'package:littlewords/route/home/Page1.dart';
 import '../../widgets/wordCard.dart';
+import 'Page0.dart';
 
 
 class HomeRoute extends StatefulWidget{
@@ -22,7 +23,7 @@ class _HomeRouteState extends State<HomeRoute> {
 
 
     final bodies = <Widget>[
-      const _Page0(),
+      const Page0(),
       const Page1(),
     ];
 
@@ -65,14 +66,4 @@ class _HomeRouteState extends State<HomeRoute> {
     );
   }
 }
-
-class _Page0 extends StatelessWidget{
-  const _Page0({Key? key}) : super (key: key);
-
-  @override
-  Widget build(BuildContext context){
-    return Placeholder();
-  }
-}
-
 

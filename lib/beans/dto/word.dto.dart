@@ -10,8 +10,8 @@ class WordDTO{
   final int? uid;
   final String? author;
   final String? content;
-  final double? latitude;
-  final double? longitude;
+  double? latitude;
+  double? longitude;
 
   Map<String, dynamic> toJson() => _$WordDTOToJson(this);
 

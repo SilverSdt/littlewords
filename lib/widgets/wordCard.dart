@@ -23,12 +23,12 @@ class WordCard extends StatelessWidget {
             children:[
               Row(
                 children: [
-                  Text(word.author!),
+                  Text(word.author ?? ''),
                   Spacer(),
                   Text(word.uid.toString())
                 ],
               ),
-               Text(word.content!)
+               Text(word.content ?? '')
             ],
           ),
         ),

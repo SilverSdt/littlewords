@@ -20,7 +20,7 @@ class Page1 extends StatelessWidget{
           final List<WordDTO>? data = snapshot.data;
 
           if (data == null || data.isEmpty){
-            return const Center(child: Text("Aucun mot ramassé"));
+            return const Center(child: Text("Aucun mot ramassé", textScaleFactor: 2));
           }
 
           return ListView.builder(
